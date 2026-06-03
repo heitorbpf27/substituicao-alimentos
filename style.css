@@ -245,3 +245,76 @@ button[type="submit"]:active { transform: scale(.98); }
   .card { padding: 2rem 1.5rem; }
   h1 { font-size: 1.65rem; }
 }
+
+/* === Choices.js customização === */
+.choices {
+  margin: 0;
+}
+
+.choices__inner {
+  background: #f7fbf8;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius) !important;
+  padding: .6rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  color: var(--text);
+  min-height: unset;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.choices.is-focused .choices__inner,
+.choices.is-open .choices__inner {
+  border-color: var(--green-lt);
+  box-shadow: 0 0 0 3px rgba(82,183,136,.18);
+}
+
+.choices.is-disabled .choices__inner {
+  opacity: .5;
+  cursor: not-allowed;
+  background: #f7fbf8;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .92rem;
+  z-index: 99;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background: var(--green-pale);
+  color: var(--green);
+}
+
+.choices__input {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .92rem;
+  background: transparent;
+  color: var(--text);
+}
+
+.choices__placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.choices__list--single .choices__item {
+  color: var(--text);
+}
+
+.choices[data-type*=select-one]::after {
+  border-color: var(--green) transparent transparent;
+  right: 1rem;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  border-color: transparent transparent var(--green);
+}
+
+/* remove o select-wrap arrow já que Choices tem o próprio */
+.select-wrap::after { display: none; }
