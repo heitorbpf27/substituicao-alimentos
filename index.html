@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Substituição de Alimentos</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,11 +33,9 @@
 
       <div class="field">
         <label for="alimento-original">2. Alimento original</label>
-        <div class="select-wrap">
-          <select id="alimento-original" name="alimento-original" required disabled>
-            <option value="" disabled selected>Selecione a categoria primeiro</option>
-          </select>
-        </div>
+        <select id="alimento-original" name="alimento-original" required>
+          <option value="">Selecione a categoria primeiro</option>
+        </select>
       </div>
 
       <div class="field">
@@ -48,11 +47,9 @@
 
       <div class="field">
         <label for="alimento-substituto">4. Substituir por</label>
-        <div class="select-wrap">
-          <select id="alimento-substituto" name="alimento-substituto" required disabled>
-            <option value="" disabled selected>Selecione o alimento original primeiro</option>
-          </select>
-        </div>
+        <select id="alimento-substituto" name="alimento-substituto" required>
+          <option value="">Selecione o alimento original primeiro</option>
+        </select>
       </div>
 
       <button type="submit">Calcular Substituição</button>
@@ -67,6 +64,7 @@
     <p class="taco-credit">Dados: Tabela Brasileira de Composição de Alimentos (TACO) — NEPA/UNICAMP, 4ª edição</p>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
